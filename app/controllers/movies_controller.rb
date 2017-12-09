@@ -6,8 +6,12 @@ class MoviesController < ApplicationController
 
   def show
     id = params[:id]
-    @movie = Movie.find(id)
-    @cancel_path = movie_path(@movie)
+    begin
+      @movie = Movie.find(id)
+      @cancel_path = movie_path(@movie)
+    rescue ActiveRecord::RecordNotFound
+      redirect_to movies_path
+    end
   end
 
   def new
