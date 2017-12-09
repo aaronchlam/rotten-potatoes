@@ -41,6 +41,9 @@ h1.title {
 	font-style: normal;
 
 }
+h1.banner a {
+	text-decoration: none;
+}
 table#movies {
 	margin: 10px;
 	border-collapse: collapse;
