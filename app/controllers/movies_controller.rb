@@ -1,11 +1,13 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all.order('title')
+    @cancel_path = movies_path
   end
 
   def show
     id = params[:id]
     @movie = Movie.find(id)
+    @cancel_path = movie_path(@movie)
   end
 
   def new
