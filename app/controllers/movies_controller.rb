@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
   def edit
     id = params[:id]
     @movie = Movie.find(id)
+    @cancel_path = movie_path(@movie)
   end
 
   def update
